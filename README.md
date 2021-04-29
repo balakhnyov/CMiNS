@@ -9,8 +9,7 @@
     * [Scattering rates](#scattering-rates)
 
 ## General info
-This project made mainly for investigate processes of conductors' scattering in some\
-nanoparticles film samples, basing on experimental data.
+This project made mainly for investigate processes of conductors' scattering in some nanoparticles film samples, basing on experimental data.
 	
 ## Methods
 In this project I will use following techniques:
