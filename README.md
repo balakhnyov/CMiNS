@@ -25,4 +25,6 @@ Here we will start with an assumption, that wave vector and kinetic energy of el
 def wave_vector(kin_energy): 
     return kin_energy ** 0.5
 ```
+
+There are also functions in this module that allow to stochastically define angles after scattering.
 ### Scattering rates

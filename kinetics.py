@@ -17,6 +17,7 @@ def io_sc_angle(E1, E2):      #Функция для угла рассеяния
     cos_theta = (1 + X * (1 - 2 * r)) / (X + 3 - 2 * r)
     return np.arccos(cos_theta)
 
+
 def impact_ionization(i_energy, threshold, field_angle, sec_energies, sec_field_angles, n):
     r = np.random.random()
     sec_energy = r * (i_energy - threshold)
