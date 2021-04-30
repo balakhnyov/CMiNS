@@ -20,4 +20,6 @@ In this project I will use following techniques:
 ## Modules
 ### Geometry
 ### Kinetics
+Here we will start with an assumption, that wave vector and kinetic energy of electron are parabolic connected: \
+![equation](https://latex.codecogs.com/gif.latex?k\sim&space;\sqrt{E})
 ### Scattering rates
