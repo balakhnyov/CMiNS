@@ -20,6 +20,9 @@ In this project I will use following techniques:
 ## Modules
 ### Geometry
 ### Kinetics
-Here we will start with an assumption, that wave vector and kinetic energy of electron are parabolic connected: \
-![equation](https://latex.codecogs.com/gif.latex?k\sim&space;\sqrt{E})
+Here we will start with an assumption, that wave vector and kinetic energy of electron are parabolic connected:
+```python
+def wave_vector(kin_energy): 
+    return kin_energy ** 0.5
+```
 ### Scattering rates
