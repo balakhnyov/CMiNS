@@ -3,27 +3,24 @@ import scipy.constants as sc
 import matplotlib.pyplot as plt
 
 
-def wave_vector(kin_energy):            #Функция определения волнового вектора по энергии
-    return kin_energy ** 0.5
+class Electron:
+    def __init__(self, energy, m_to_eff):
+        self.m_to_eff = m_to_eff
+        self.energy = energy
+        self.x = 0
+        self.y = 0
+        self.fi = 0
+        self.t = 0
 
+    def transfer(self, dx, dy, dt, fi):
+        self.x += dx
+        self.y += dy
+        self.t += dt
+        self.fi = fi
 
-def velocity(E, e, m):     #скорость электрона с энергией E в м/c
-    return ( 2 * e * E / m )**0.5
+    def add_energy(self, energy):
+        self.energy += energy
 
-
-def io_sc_angle(E1, E2):      #Функция для угла рассеяния при impact ionisation
-    X = (E1 + E2) / (E1 * E2) ** 0.5   #При условии, что нет примесей
-    r = np.random.random()
-    cos_theta = (1 + X * (1 - 2 * r)) / (X + 3 - 2 * r)
-    return np.arccos(cos_theta)
-
-
-def impact_ionization(i_energy, threshold, field_angle, sec_energies, sec_field_angles, n):
-    r = np.random.random()
-    sec_energy = r * (i_energy - threshold)
-    f_energy = i_energy - threshold - sec_energy
-    rdir = np.random.choice([-1, 1])
-    field_angle += rdir * io_sc_angle(f_energy, i_energy)
-    sec_field_angles = np.append([sec_field_angles], [np.random.random()*2*np.pi])
-    sec_energies = np.append([sec_energies], [sec_energy])
-    return f_energy, field_angle, sec_energies, sec_field_angles, n+1
+    def velocity(self):
+        v = np.sqrt(2 * sc.e * self.energy / (self.m_to_eff * sc.m_e))
+        return v
