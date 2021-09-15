@@ -10,7 +10,7 @@ class Cluster:
         self.field = field
         self.acceleration = sc.e * self.field / (self.m_to_eff * sc.m_e)
         self.d = d
-        self.r = d/2
+        self.r = d / 2
         self.electron = electron
         self.height = height
         # self.electron.transfer(-5, -6, -7, -8)
@@ -27,7 +27,7 @@ class Cluster:
         #     random angle
         alpha = (np.pi / 3) * orient_case[orient][2] + \
                 (np.pi / 3) * np.random.random()
-        #     calculating coordinates
+        #     calculating coordinates of random point of circle
         x = circle_r * np.cos(alpha) + circle_x
         y = circle_r * np.sin(alpha) + circle_y
 
@@ -93,4 +93,3 @@ class Cluster:
     def iteration(self):
         self.barrier_tunneling()
         self.fly()
-
